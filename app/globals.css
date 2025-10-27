@@ -1,0 +1,193 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated to ClickUp-style modern palette with brand blue #004CE6 */
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(222 47% 11%); /* #0F172A */
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(222 47% 11%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(222 47% 11%);
+
+  /* Brand blue #004CE6 */
+  --primary: hsl(218 100% 45%);
+  --primary-foreground: hsl(0 0% 100%);
+
+  /* Soft surfaces */
+  --secondary: hsl(210 40% 98%); /* #F8FAFC */
+  --secondary-foreground: hsl(222 47% 11%);
+  --muted: hsl(210 40% 96%);
+  --muted-foreground: hsl(215 16% 47%);
+  --accent: hsl(210 40% 96%);
+  --accent-foreground: hsl(222 47% 11%);
+
+  --destructive: hsl(0 84% 60%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(214 32% 91%);
+  --input: hsl(214 32% 91%);
+  --ring: hsl(218 100% 45%);
+
+  /* Chart colors with gradient accent palette */
+  --chart-1: hsl(218 100% 45%); /* Brand blue */
+  --chart-2: hsl(254 65% 67%); /* Indigo #6E59F9 */
+  --chart-3: hsl(187 85% 53%); /* Teal #22D3EE */
+  --chart-4: hsl(142 71% 45%); /* Emerald */
+  --chart-5: hsl(38 92% 50%); /* Amber */
+
+  /* Updated radius to rounded-2xl (1rem) for modern look */
+  --radius: 1rem;
+
+  /* Sidebar tokens */
+  --sidebar: hsl(0 0% 100%);
+  --sidebar-foreground: hsl(222 47% 11%);
+  --sidebar-primary: hsl(218 100% 45%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(210 40% 98%);
+  --sidebar-accent-foreground: hsl(222 47% 11%);
+  --sidebar-border: hsl(214 32% 91%);
+  --sidebar-ring: hsl(218 100% 45%);
+
+  /* Added custom tokens for modern SaaS look */
+  --bg-soft: hsl(210 40% 98%);
+  --brand: hsl(218 100% 45%);
+  --brand-foreground: hsl(0 0% 100%);
+  --gradient-from: hsl(254 65% 67%); /* #6E59F9 indigo */
+  --gradient-to: hsl(187 85% 53%); /* #22D3EE teal */
+}
+
+.dark {
+  /* Updated dark mode with softer contrast */
+  --background: hsl(222 47% 7%); /* #0B1220 */
+  --foreground: hsl(210 20% 90%); /* #E5E7EB */
+  --card: hsl(220 39% 11%); /* #0F1A2A */
+  --card-foreground: hsl(210 20% 90%);
+  --popover: hsl(220 39% 11%);
+  --popover-foreground: hsl(210 20% 90%);
+
+  --primary: hsl(218 100% 45%);
+  --primary-foreground: hsl(0 0% 100%);
+
+  --secondary: hsl(220 39% 15%);
+  --secondary-foreground: hsl(210 20% 90%);
+  --muted: hsl(220 39% 15%);
+  --muted-foreground: hsl(215 16% 65%);
+  --accent: hsl(220 39% 15%);
+  --accent-foreground: hsl(210 20% 90%);
+
+  --destructive: hsl(0 63% 50%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(220 39% 18%);
+  --input: hsl(220 39% 18%);
+  --ring: hsl(218 100% 55%);
+
+  --chart-1: hsl(218 100% 55%);
+  --chart-2: hsl(254 65% 67%);
+  --chart-3: hsl(187 85% 53%);
+  --chart-4: hsl(142 71% 55%);
+  --chart-5: hsl(38 92% 60%);
+
+  --sidebar: hsl(220 39% 11%);
+  --sidebar-foreground: hsl(210 20% 90%);
+  --sidebar-primary: hsl(218 100% 55%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(220 39% 15%);
+  --sidebar-accent-foreground: hsl(210 20% 90%);
+  --sidebar-border: hsl(220 39% 18%);
+  --sidebar-ring: hsl(218 100% 55%);
+
+  --bg-soft: hsl(220 39% 15%);
+  --brand: hsl(218 100% 55%);
+  --brand-foreground: hsl(0 0% 100%);
+  --gradient-from: hsl(254 65% 67%);
+  --gradient-to: hsl(187 85% 53%);
+}
+
+@theme inline {
+  --font-sans: "Inter", "Inter Fallback";
+
+  /* Colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Updated radius scale for rounded-2xl global style */
+  --radius-sm: calc(var(--radius) - 0.25rem);
+  --radius-md: calc(var(--radius) - 0.125rem);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 0.25rem);
+  --radius-2xl: calc(var(--radius) + 0.5rem);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Added custom color tokens */
+  --color-bg-soft: var(--bg-soft);
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-gradient-from: var(--gradient-from);
+  --color-gradient-to: var(--gradient-to);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Added utility classes for modern SaaS styling */
+@layer utilities {
+  .gradient-brand {
+    background: linear-gradient(135deg, hsl(var(--gradient-from)) 0%, hsl(var(--gradient-to)) 100%);
+  }
+
+  .gradient-brand-subtle {
+    background: linear-gradient(135deg, hsl(var(--gradient-from) / 0.1) 0%, hsl(var(--gradient-to) / 0.1) 100%);
+  }
+
+  .card-glass {
+    background: linear-gradient(135deg, hsl(var(--card) / 0.8) 0%, hsl(var(--card) / 0.6) 100%);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  }
+
+  .shadow-soft {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  }
+
+  .shadow-soft-lg {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  }
+}
